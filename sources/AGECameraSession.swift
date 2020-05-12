@@ -37,7 +37,7 @@ extension AGECameraSession {
         
         if #available(iOS 13.0, *) {
             for item in noumenon.connections {
-                noumenon.removeConnection(item)
+                noumenon.remove(item)
             }
         } else {
             // Fallback on earlier versions

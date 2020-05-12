@@ -7,41 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65C5B8D74B103FBEF2D413A2 /* Pods_AGECameraExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686BC7D1A5B575017E9A40E2 /* Pods_AGECameraExample.framework */; };
+		A7190624246A77C00031E91C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7190623246A77C00031E91C /* ViewController.swift */; };
 		A79A7CCB23A261CB00335021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CCA23A261CB00335021 /* AppDelegate.swift */; };
-		A79A7CCD23A261CB00335021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CCC23A261CB00335021 /* SceneDelegate.swift */; };
-		A79A7CCF23A261CB00335021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CCE23A261CB00335021 /* ViewController.swift */; };
 		A79A7CD223A261CB00335021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79A7CD023A261CB00335021 /* Main.storyboard */; };
 		A79A7CD423A261CC00335021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79A7CD323A261CC00335021 /* Assets.xcassets */; };
 		A79A7CD723A261CC00335021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79A7CD523A261CC00335021 /* LaunchScreen.storyboard */; };
-		A79A7CE323A2629600335021 /* AGECamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CE223A2629600335021 /* AGECamera.swift */; };
-		A79A7CE523A264F600335021 /* AGECameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CE423A264F600335021 /* AGECameraError.swift */; };
-		A79A7D5123A774FF00335021 /* AGECameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D5023A774FF00335021 /* AGECameraPreview.swift */; };
-		A79A7D5F23A8AE0100335021 /* AGECameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D5E23A8AE0100335021 /* AGECameraSession.swift */; };
-		A79A7D6123AA2D4500335021 /* AGESingleCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6023AA2D4500335021 /* AGESingleCamera.swift */; };
 		A79A7D6323AB1F4300335021 /* SingleCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6223AB1F4300335021 /* SingleCaptureViewController.swift */; };
-		A79A7D6523AB226800335021 /* AGEMultiCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6423AB226800335021 /* AGEMultiCamera.swift */; };
 		A79A7D6723AB268C00335021 /* MultiCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6623AB268C00335021 /* MultiCameraViewController.swift */; };
-		A79A7D6923AB7C7B00335021 /* AGECameraProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6823AB7C7B00335021 /* AGECameraProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A79A7CC723A261CB00335021 /* AGECamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGECamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43824FB1277B9B79476D9738 /* Pods-AGECameraExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGECameraExample.debug.xcconfig"; path = "Target Support Files/Pods-AGECameraExample/Pods-AGECameraExample.debug.xcconfig"; sourceTree = "<group>"; };
+		686BC7D1A5B575017E9A40E2 /* Pods_AGECameraExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGECameraExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7190623246A77C00031E91C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A79A7CC723A261CB00335021 /* AGECameraExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGECameraExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A79A7CCA23A261CB00335021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A79A7CCC23A261CB00335021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A79A7CCE23A261CB00335021 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A79A7CD123A261CB00335021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A79A7CD323A261CC00335021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A79A7CD623A261CC00335021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A79A7CD823A261CC00335021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A79A7CE223A2629600335021 /* AGECamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGECamera.swift; sourceTree = "<group>"; };
-		A79A7CE423A264F600335021 /* AGECameraError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGECameraError.swift; sourceTree = "<group>"; };
-		A79A7D5023A774FF00335021 /* AGECameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGECameraPreview.swift; sourceTree = "<group>"; };
-		A79A7D5E23A8AE0100335021 /* AGECameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGECameraSession.swift; sourceTree = "<group>"; };
-		A79A7D6023AA2D4500335021 /* AGESingleCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGESingleCamera.swift; sourceTree = "<group>"; };
 		A79A7D6223AB1F4300335021 /* SingleCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCaptureViewController.swift; sourceTree = "<group>"; };
-		A79A7D6423AB226800335021 /* AGEMultiCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGEMultiCamera.swift; sourceTree = "<group>"; };
 		A79A7D6623AB268C00335021 /* MultiCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCameraViewController.swift; sourceTree = "<group>"; };
-		A79A7D6823AB7C7B00335021 /* AGECameraProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGECameraProtocol.swift; sourceTree = "<group>"; };
+		D63A233FD44EDF83BC085780 /* Pods-AGECameraExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGECameraExample.release.xcconfig"; path = "Target Support Files/Pods-AGECameraExample/Pods-AGECameraExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,46 +37,64 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C5B8D74B103FBEF2D413A2 /* Pods_AGECameraExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B37B3811B55C85B8E96A885 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				686BC7D1A5B575017E9A40E2 /* Pods_AGECameraExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7716A6D7D86062E8077FB0F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43824FB1277B9B79476D9738 /* Pods-AGECameraExample.debug.xcconfig */,
+				D63A233FD44EDF83BC085780 /* Pods-AGECameraExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A79A7CBE23A261CB00335021 = {
 			isa = PBXGroup;
 			children = (
-				A79A7CC923A261CB00335021 /* AGECamera */,
+				A79A7CC923A261CB00335021 /* AGECameraExample */,
 				A79A7CC823A261CB00335021 /* Products */,
+				7716A6D7D86062E8077FB0F8 /* Pods */,
+				5B37B3811B55C85B8E96A885 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		A79A7CC823A261CB00335021 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A79A7CC723A261CB00335021 /* AGECamera.app */,
+				A79A7CC723A261CB00335021 /* AGECameraExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A79A7CC923A261CB00335021 /* AGECamera */ = {
+		A79A7CC923A261CB00335021 /* AGECameraExample */ = {
 			isa = PBXGroup;
 			children = (
 				A79A7D6223AB1F4300335021 /* SingleCaptureViewController.swift */,
 				A79A7D6623AB268C00335021 /* MultiCameraViewController.swift */,
-				A79A7CCE23A261CB00335021 /* ViewController.swift */,
+				A7190623246A77C00031E91C /* ViewController.swift */,
 				A79A7CD023A261CB00335021 /* Main.storyboard */,
-				A79A7CE123A2624D00335021 /* source */,
 				A79A7CE023A2622100335021 /* Supporting Files */,
 			);
-			path = AGECamera;
+			path = AGECameraExample;
 			sourceTree = "<group>";
 		};
 		A79A7CE023A2622100335021 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				A79A7CCA23A261CB00335021 /* AppDelegate.swift */,
-				A79A7CCC23A261CB00335021 /* SceneDelegate.swift */,
 				A79A7CD323A261CC00335021 /* Assets.xcassets */,
 				A79A7CD523A261CC00335021 /* LaunchScreen.storyboard */,
 				A79A7CD823A261CC00335021 /* Info.plist */,
@@ -96,39 +102,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A79A7CE123A2624D00335021 /* source */ = {
-			isa = PBXGroup;
-			children = (
-				A79A7D6823AB7C7B00335021 /* AGECameraProtocol.swift */,
-				A79A7D6023AA2D4500335021 /* AGESingleCamera.swift */,
-				A79A7D6423AB226800335021 /* AGEMultiCamera.swift */,
-				A79A7CE223A2629600335021 /* AGECamera.swift */,
-				A79A7D5023A774FF00335021 /* AGECameraPreview.swift */,
-				A79A7D5E23A8AE0100335021 /* AGECameraSession.swift */,
-				A79A7CE423A264F600335021 /* AGECameraError.swift */,
-			);
-			name = source;
-			path = ../../source;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A79A7CC623A261CB00335021 /* AGECamera */ = {
+		A79A7CC623A261CB00335021 /* AGECameraExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A79A7CDB23A261CC00335021 /* Build configuration list for PBXNativeTarget "AGECamera" */;
+			buildConfigurationList = A79A7CDB23A261CC00335021 /* Build configuration list for PBXNativeTarget "AGECameraExample" */;
 			buildPhases = (
+				AB1207FB319135B546CC7DFB /* [CP] Check Pods Manifest.lock */,
 				A79A7CC323A261CB00335021 /* Sources */,
 				A79A7CC423A261CB00335021 /* Frameworks */,
 				A79A7CC523A261CB00335021 /* Resources */,
+				2314BE1E18CBF87FCA3EB864 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AGECamera;
+			name = AGECameraExample;
 			productName = AGECamera;
-			productReference = A79A7CC723A261CB00335021 /* AGECamera.app */;
+			productReference = A79A7CC723A261CB00335021 /* AGECameraExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +139,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A79A7CC223A261CB00335021 /* Build configuration list for PBXProject "AGECamera" */;
+			buildConfigurationList = A79A7CC223A261CB00335021 /* Build configuration list for PBXProject "AGECameraExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A79A7CC623A261CB00335021 /* AGECamera */,
+				A79A7CC623A261CB00335021 /* AGECameraExample */,
 			);
 		};
 /* End PBXProject section */
@@ -177,23 +170,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2314BE1E18CBF87FCA3EB864 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AGECameraExample/Pods-AGECameraExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AGECameraExample/Pods-AGECameraExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AGECameraExample/Pods-AGECameraExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB1207FB319135B546CC7DFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AGECameraExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A79A7CC323A261CB00335021 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A79A7D6123AA2D4500335021 /* AGESingleCamera.swift in Sources */,
+				A7190624246A77C00031E91C /* ViewController.swift in Sources */,
 				A79A7D6323AB1F4300335021 /* SingleCaptureViewController.swift in Sources */,
-				A79A7CE323A2629600335021 /* AGECamera.swift in Sources */,
 				A79A7D6723AB268C00335021 /* MultiCameraViewController.swift in Sources */,
-				A79A7CCF23A261CB00335021 /* ViewController.swift in Sources */,
 				A79A7CCB23A261CB00335021 /* AppDelegate.swift in Sources */,
-				A79A7D6923AB7C7B00335021 /* AGECameraProtocol.swift in Sources */,
-				A79A7CE523A264F600335021 /* AGECameraError.swift in Sources */,
-				A79A7D5123A774FF00335021 /* AGECameraPreview.swift in Sources */,
-				A79A7CCD23A261CB00335021 /* SceneDelegate.swift in Sources */,
-				A79A7D6523AB226800335021 /* AGEMultiCamera.swift in Sources */,
-				A79A7D5F23A8AE0100335021 /* AGECameraSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,17 +362,18 @@
 		};
 		A79A7CDC23A261CC00335021 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43824FB1277B9B79476D9738 /* Pods-AGECameraExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = URLGNR2V35;
-				INFOPLIST_FILE = AGECamera/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_FILE = AGECameraExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CavanSu.AGECamera;
+				PRODUCT_BUNDLE_IDENTIFIER = CavanSu.AGECameraExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -354,17 +382,18 @@
 		};
 		A79A7CDD23A261CC00335021 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D63A233FD44EDF83BC085780 /* Pods-AGECameraExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = URLGNR2V35;
-				INFOPLIST_FILE = AGECamera/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_FILE = AGECameraExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CavanSu.AGECamera;
+				PRODUCT_BUNDLE_IDENTIFIER = CavanSu.AGECameraExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,7 +403,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A79A7CC223A261CB00335021 /* Build configuration list for PBXProject "AGECamera" */ = {
+		A79A7CC223A261CB00335021 /* Build configuration list for PBXProject "AGECameraExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A79A7CD923A261CC00335021 /* Debug */,
@@ -383,7 +412,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A79A7CDB23A261CC00335021 /* Build configuration list for PBXNativeTarget "AGECamera" */ = {
+		A79A7CDB23A261CC00335021 /* Build configuration list for PBXNativeTarget "AGECameraExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A79A7CDC23A261CC00335021 /* Debug */,

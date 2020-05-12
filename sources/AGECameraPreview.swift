@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class AGECameraPreview: UIView {
+public class AGECameraPreview: UIView {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer {
         guard let layer = layer as? AVCaptureVideoPreviewLayer else {
             fatalError("Expected `AVCaptureVideoPreviewLayer` type for layer. Check AGECameraPreview.layerClass implementation.")
@@ -19,11 +19,11 @@ class AGECameraPreview: UIView {
         return layer
     }
     
-    override class var layerClass: AnyClass {
+    override public class var layerClass: AnyClass {
         return AVCaptureVideoPreviewLayer.self
     }
     
-    override func layoutSublayers(of layer: CALayer) {
+    override open func layoutSublayers(of layer: CALayer) {
         defer {
             super.layoutSublayers(of: layer)
         }

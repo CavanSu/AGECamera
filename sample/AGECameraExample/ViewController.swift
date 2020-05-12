@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AGECamera
 
 class ViewController: UIViewController {
     
@@ -15,18 +16,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var multiBackPreview: AGECameraPreview!
     @IBOutlet weak var multiFrontPreview: AGECameraPreview!
     
-    private var camera: AGECamera?
+    private var single: AGESingleCamera?
+    private var multi: AGEMultiCamera?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         do {
-            camera = try AGECamera(position: .front)
-            camera?.backPreview = backPreview
-            camera?.frontPreview = frontPreview
-            try camera?.start(work: .capture)
+//            single = try AGESingleCamera(position: .front)
+//            single?.preview = frontPreview
+//            try single?.start(work: .capture)
             
-            
+            multi = try AGEMultiCamera(backPreview: multiBackPreview, frontPreview: multiFrontPreview)
+            multi?.backPreview = multiBackPreview
+                       multi?.frontPreview = multiFrontPreview
+            try multi?.start(work: .capture)
         } catch let error as AGECameraError {
             print("\(error.localizedDescription)")
         } catch {
@@ -43,17 +47,19 @@ class ViewController: UIViewController {
             print("select: \(title)")
             switch title {
             case "Front":
-                camera?.backPreview = backPreview
-                camera?.frontPreview = frontPreview
-                try camera?.switchPosition(.front)
+                multi?.stopWork()
+                single?.preview = frontPreview
+                try single?.switchPosition(.front)
+                try single?.start(work: .capture)
             case "Back":
-                camera?.backPreview = backPreview
-                camera?.frontPreview = frontPreview
-                try camera?.switchPosition(.back)
+                multi?.stopWork()
+                single?.preview = backPreview
+                try single?.switchPosition(.back)
+                try single?.start(work: .capture)
             case "Multi":
-                camera?.backPreview = multiBackPreview
-                camera?.frontPreview = multiFrontPreview
-                try camera?.switchPosition(.multi)
+                single?.set(resolution: .hd1920x1080)
+                single?.stopWork()
+                try multi?.start(work: .capture)
             default:
                 break
             }

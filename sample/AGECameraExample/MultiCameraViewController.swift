@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AGECamera
 
 class MultiCameraViewController: UIViewController {
     @IBOutlet weak var frontPreview: AGECameraPreview!

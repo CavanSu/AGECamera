@@ -9,11 +9,11 @@
 import UIKit
 import AVFoundation
 
-protocol AGESingleCameraDelegate: NSObjectProtocol {
+public protocol AGESingleCameraDelegate: NSObjectProtocol {
     func camera(_ camera: AGESingleCamera, position: AGECameraPosition, didOutput sampleBuffer: CMSampleBuffer)
 }
 
-class AGESingleCamera: NSObject, AGECameraProtocol {
+open class AGESingleCamera: NSObject, AGECameraProtocol {
     fileprivate struct OldItems {
         var deviceInput: AVCaptureDeviceInput?
         var videoDataOutput: AVCaptureVideoDataOutput?
@@ -21,7 +21,7 @@ class AGESingleCamera: NSObject, AGECameraProtocol {
         var previewConnnection: AVCaptureConnection?
     }
     
-    enum WorkMode {
+    public enum WorkMode {
         case capture
         
         fileprivate var isWorking: Bool {
@@ -39,18 +39,18 @@ class AGESingleCamera: NSObject, AGECameraProtocol {
     
     private var workingMode: WorkMode?
     
-    weak var delegate: AGESingleCameraDelegate?
+    public weak var delegate: AGESingleCameraDelegate?
     
-    var preview: AGECameraPreview?
+    public var preview: AGECameraPreview?
     
-    init?(position: AGECameraPosition) throws {
+    public init?(position: AGECameraPosition) throws {
         self.position = position
         super.init()
         try checkIsSimulator()
     }
 }
 
-extension AGESingleCamera {
+public extension AGESingleCamera {
     func start(work: WorkMode) throws {
         if let current = workingMode, current == work {
             return
@@ -73,6 +73,8 @@ extension AGESingleCamera {
     }
     
     func switchPosition(_ position: AGECameraPosition) throws {
+        
+        
         let oldPosition = self.position
         guard oldPosition != position else {
             return
@@ -97,8 +99,10 @@ extension AGESingleCamera {
 }
 
 // MARK: - Video Data Capture
-private extension AGESingleCamera {
+extension AGESingleCamera {
     func startVideoCapture() throws {
+        print("switchPosition===>")
+        
         try checkCameraPermision { [weak self] in
             guard let strongSelf = self else {
                 return
@@ -194,7 +198,9 @@ private extension AGESingleCamera {
         }
         session.noumenon.addOutputWithNoConnections(newVideoDataOutput)
         newVideoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
-        newVideoDataOutput.setSampleBufferDelegate(self, queue: mediaOutputQueue)
+        newVideoDataOutput.setSampleBufferDelegate(self, queue: .main)
+        
+        print("test===>1")
         
         // AVCaptureInput.Port
         var videoPort: AVCaptureInput.Port
@@ -213,10 +219,10 @@ private extension AGESingleCamera {
         }
                 
         let newDataConnection = AVCaptureConnection(inputPorts: [videoPort], output: newVideoDataOutput)
-        guard session.noumenon.canAddConnection(newDataConnection) else {
+        guard session.noumenon.canAdd(newDataConnection) else {
             throw AGECameraError(type: .fail("no connection to the \(position.description) camera video data output"))
         }
-        session.noumenon.addConnection(newDataConnection)
+        session.noumenon.add(newDataConnection)
         newDataConnection.videoOrientation = .portrait
         
         // connect input to layer
@@ -226,10 +232,10 @@ private extension AGESingleCamera {
             preview.videoPreviewLayer.setSessionWithNoConnection(session.noumenon)
             
             newPreviewConnection = AVCaptureConnection(inputPort: videoPort, videoPreviewLayer: preview.videoPreviewLayer)
-            guard session.noumenon.canAddConnection(newPreviewConnection!) else {
+            guard session.noumenon.canAdd(newPreviewConnection!) else {
                 throw AGECameraError(type: .fail("no a connection to the \(position.description) camera video preview layer"))
             }
-            session.noumenon.addConnection(newPreviewConnection!)
+            session.noumenon.add(newPreviewConnection!)
         }
         
         switch position {
@@ -250,7 +256,7 @@ private extension AGESingleCamera {
 }
 
 extension AGESingleCamera: AVCaptureVideoDataOutputSampleBufferDelegate {
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         delegate?.camera(self,
                          position: position,
                          didOutput: sampleBuffer)

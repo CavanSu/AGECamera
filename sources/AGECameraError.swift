@@ -7,15 +7,15 @@
 
 import UIKit
 
-struct AGECameraError: Error {
-    enum ErrorType {
+public struct AGECameraError: Error {
+    public enum ErrorType {
         case fail(String)
         case invalidParameter(String)
         case valueNil(String)
         case unknown
     }
     
-    var localizedDescription: String {
+    public var localizedDescription: String {
         switch type {
         case .fail(let reason):             return "\(reason)"
         case .invalidParameter(let para):   return "\(para)"
@@ -24,5 +24,5 @@ struct AGECameraError: Error {
         }
     }
     
-    var type: ErrorType
+    public var type: ErrorType
 }

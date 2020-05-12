@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h1c-26-U4U">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AGECamera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AGECameraExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,19 +27,19 @@
                                     <action selector="doSegChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="lJo-Mh-egc"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQ0-1N-lKD" customClass="AGECameraPreview" customModule="AGECamera" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQ0-1N-lKD" customClass="AGECameraPreview" customModule="AGECamera">
                                 <rect key="frame" x="0.0" y="206" width="207" height="318"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adD-td-EGA" customClass="AGECameraPreview" customModule="AGECamera" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adD-td-EGA" customClass="AGECameraPreview" customModule="AGECamera">
                                 <rect key="frame" x="0.0" y="544" width="207" height="318"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiW-f9-J56" customClass="AGECameraPreview" customModule="AGECamera" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiW-f9-J56" customClass="AGECameraPreview" customModule="AGECamera">
                                 <rect key="frame" x="207" y="206" width="207" height="318"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHx-xg-AlU" customClass="AGECameraPreview" customModule="AGECamera" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHx-xg-AlU" customClass="AGECameraPreview" customModule="AGECamera">
                                 <rect key="frame" x="207" y="544" width="207" height="318"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -211,12 +212,12 @@
         <!--Single Capture View Controller-->
         <scene sceneID="JQi-ky-E6d">
             <objects>
-                <viewController id="L4P-EH-RTd" customClass="SingleCaptureViewController" customModule="AGECamera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="L4P-EH-RTd" customClass="SingleCaptureViewController" customModule="AGECameraExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojd-bj-op4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-2s-N2d" customClass="AGECameraPreview" customModule="AGECamera" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-2s-N2d" customClass="AGECameraPreview" customModule="AGECamera">
                                 <rect key="frame" x="0.0" y="176" width="414" height="598"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -268,16 +269,16 @@
         <!--Multi Camera View Controller-->
         <scene sceneID="1RO-ya-RHk">
             <objects>
-                <viewController id="fi0-gJ-ybp" customClass="MultiCameraViewController" customModule="AGECamera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fi0-gJ-ybp" customClass="MultiCameraViewController" customModule="AGECameraExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DvN-NG-wXU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aK4-J5-bfN" customClass="AGECameraPreview" customModule="AGECamera" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aK4-J5-bfN" customClass="AGECameraPreview" customModule="AGECamera">
                                 <rect key="frame" x="0.0" y="176" width="414" height="299"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-gk-k6H" customClass="AGECameraPreview" customModule="AGECamera" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Og8-gk-k6H" customClass="AGECameraPreview" customModule="AGECamera">
                                 <rect key="frame" x="0.0" y="475" width="414" height="299"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>

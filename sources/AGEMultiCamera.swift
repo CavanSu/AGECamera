@@ -9,11 +9,11 @@
 import UIKit
 import AVFoundation
 
-protocol AGEMultiCameraDelegate: NSObjectProtocol {
+public protocol AGEMultiCameraDelegate: NSObjectProtocol {
     func multiCamera(_ camera: AGEMultiCamera, position: AGECameraPosition, didOutput sampleBuffer: CMSampleBuffer)
 }
 
-class AGEMultiCamera: NSObject, AGEMultiCameraProtocol {
+public class AGEMultiCamera: NSObject, AGEMultiCameraProtocol {
     fileprivate struct OldItems {
         var deviceInput: AVCaptureDeviceInput?
         var videoDataOutput: AVCaptureVideoDataOutput?
@@ -21,7 +21,7 @@ class AGEMultiCamera: NSObject, AGEMultiCameraProtocol {
         var previewConnnection: AVCaptureConnection?
     }
     
-    enum WorkMode {
+    public enum WorkMode {
         case capture
         
         fileprivate var isWorking: Bool {
@@ -37,19 +37,21 @@ class AGEMultiCamera: NSObject, AGEMultiCameraProtocol {
     
     private var workingMode: WorkMode?
     
-    weak var delegate: AGEMultiCameraDelegate?
+    public weak var delegate: AGEMultiCameraDelegate?
     
-    var backPreview: AGECameraPreview?
-    var frontPreview: AGECameraPreview?
+    public var backPreview: AGECameraPreview?
+    public var frontPreview: AGECameraPreview?
     
-    init?(backPreview: AGECameraPreview? = nil, frontPreview: AGECameraPreview? = nil) throws {
+    public init?(backPreview: AGECameraPreview? = nil, frontPreview: AGECameraPreview? = nil) throws {
         super.init()
+        self.backPreview = backPreview
+        self.frontPreview = frontPreview
         try checkIsSimulator()
         try checkSystemVersionSupportMultiStream()
     }
 }
 
-extension AGEMultiCamera {
+public extension AGEMultiCamera {
     func start(work: WorkMode) throws {
         if let current = workingMode, current == work {
             return
@@ -105,6 +107,10 @@ private extension AGEMultiCamera {
     }
     
     func sessionConfiguration(position: AGECameraPosition, preview: AGECameraPreview?, olds: OldItems) throws {
+        guard #available(iOS 13.0, *) else {
+            throw AGECameraError(type: .fail("unsupport this position: \(position.rawValue)"))
+        }
+        
         let session = workingSession
         
         // AVCaptureDevice search camera
@@ -163,10 +169,10 @@ private extension AGEMultiCamera {
         }
                 
         let newDataConnection = AVCaptureConnection(inputPorts: [videoPort], output: newVideoDataOutput)
-        guard session.noumenon.canAddConnection(newDataConnection) else {
+        guard session.noumenon.canAdd(newDataConnection) else {
             throw AGECameraError(type: .fail("no connection to the \(position.description) camera video data output"))
         }
-        session.noumenon.addConnection(newDataConnection)
+        session.noumenon.add(newDataConnection)
         newDataConnection.videoOrientation = .landscapeLeft
         
         // connect input to layer
@@ -176,10 +182,10 @@ private extension AGEMultiCamera {
             preview.videoPreviewLayer.setSessionWithNoConnection(session.noumenon)
             
             newPreviewConnection = AVCaptureConnection(inputPort: videoPort, videoPreviewLayer: preview.videoPreviewLayer)
-            guard session.noumenon.canAddConnection(newPreviewConnection!) else {
+            guard session.noumenon.canAdd(newPreviewConnection!) else {
                 throw AGECameraError(type: .fail("no a connection to the \(position.description) camera video preview layer"))
             }
-            session.noumenon.addConnection(newPreviewConnection!)
+            session.noumenon.add(newPreviewConnection!)
         }
         
         switch position {
@@ -202,7 +208,7 @@ private extension AGEMultiCamera {
 }
 
 extension AGEMultiCamera: AVCaptureVideoDataOutputSampleBufferDelegate {
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         var position: AGECameraPosition
         
         if connection == workingSession.backVideoDataConnection {

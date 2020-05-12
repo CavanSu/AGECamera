@@ -9,11 +9,11 @@
 import UIKit
 import AVFoundation
 
-typealias AGECameraEXCompletion = (() throws -> Void)?
+public typealias AGECameraEXCompletion = (() throws -> Void)?
 
-typealias AGECameraPosition = AVCaptureDevice.Position
+public typealias AGECameraPosition = AVCaptureDevice.Position
 
-extension AGECameraPosition {
+public extension AGECameraPosition {
     var description: String {
         switch self {
         case .front:        return "front"
