@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AGECamera
 
-class MultiCameraViewController: UIViewController {
+class MultiCaptureViewController: UIViewController {
     @IBOutlet weak var frontPreview: AGECameraPreview!
     @IBOutlet weak var backPreview: AGECameraPreview!
     
@@ -38,7 +38,7 @@ class MultiCameraViewController: UIViewController {
     }
 }
 
-extension MultiCameraViewController: AGEMultiCameraDelegate {
+extension MultiCaptureViewController: AGEMultiCameraDelegate {
     func multiCamera(_ camera: AGEMultiCamera, position: AGECameraPosition, didOutput sampleBuffer: CMSampleBuffer) {
         guard let pixelbuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return

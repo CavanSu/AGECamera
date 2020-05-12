@@ -8,81 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AGECameraExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fbc-SM-YCR">
-                                <rect key="frame" x="129.66666666666666" y="110" width="154.99999999999997" height="32"/>
-                                <segments>
-                                    <segment title="Front"/>
-                                    <segment title="Back"/>
-                                    <segment title="Multi"/>
-                                </segments>
-                                <connections>
-                                    <action selector="doSegChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="lJo-Mh-egc"/>
-                                </connections>
-                            </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQ0-1N-lKD" customClass="AGECameraPreview" customModule="AGECamera">
-                                <rect key="frame" x="0.0" y="206" width="207" height="318"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adD-td-EGA" customClass="AGECameraPreview" customModule="AGECamera">
-                                <rect key="frame" x="0.0" y="544" width="207" height="318"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiW-f9-J56" customClass="AGECameraPreview" customModule="AGECamera">
-                                <rect key="frame" x="207" y="206" width="207" height="318"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHx-xg-AlU" customClass="AGECameraPreview" customModule="AGECamera">
-                                <rect key="frame" x="207" y="544" width="207" height="318"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="YQ0-1N-lKD" firstAttribute="height" secondItem="adD-td-EGA" secondAttribute="height" id="1yG-AE-MRZ"/>
-                            <constraint firstItem="adD-td-EGA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6uc-cE-3Nl"/>
-                            <constraint firstItem="YQ0-1N-lKD" firstAttribute="top" secondItem="fbc-SM-YCR" secondAttribute="bottom" constant="65" id="6yZ-5N-nXA"/>
-                            <constraint firstItem="adD-td-EGA" firstAttribute="top" secondItem="YQ0-1N-lKD" secondAttribute="bottom" constant="20" id="87c-Nk-fer"/>
-                            <constraint firstItem="BiW-f9-J56" firstAttribute="top" secondItem="YQ0-1N-lKD" secondAttribute="top" id="J2B-1z-uqF"/>
-                            <constraint firstItem="YQ0-1N-lKD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JaK-2g-Ipp"/>
-                            <constraint firstItem="BiW-f9-J56" firstAttribute="leading" secondItem="YQ0-1N-lKD" secondAttribute="trailing" id="JzC-Gp-ZlR"/>
-                            <constraint firstItem="BiW-f9-J56" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NB5-dy-R33"/>
-                            <constraint firstItem="vHx-xg-AlU" firstAttribute="height" secondItem="adD-td-EGA" secondAttribute="height" id="Nss-eG-ReE"/>
-                            <constraint firstItem="fbc-SM-YCR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pfq-ye-SGt"/>
-                            <constraint firstItem="vHx-xg-AlU" firstAttribute="leading" secondItem="adD-td-EGA" secondAttribute="trailing" id="SeQ-yU-Shu"/>
-                            <constraint firstItem="fbc-SM-YCR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="UfJ-TK-zWS"/>
-                            <constraint firstItem="BiW-f9-J56" firstAttribute="width" secondItem="YQ0-1N-lKD" secondAttribute="width" id="Z7C-TC-L24"/>
-                            <constraint firstItem="vHx-xg-AlU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dUd-rh-NF9"/>
-                            <constraint firstItem="vHx-xg-AlU" firstAttribute="width" secondItem="adD-td-EGA" secondAttribute="width" id="gHr-I7-DwO"/>
-                            <constraint firstItem="BiW-f9-J56" firstAttribute="height" secondItem="YQ0-1N-lKD" secondAttribute="height" id="gyp-yO-sTg"/>
-                            <constraint firstItem="vHx-xg-AlU" firstAttribute="leading" secondItem="adD-td-EGA" secondAttribute="trailing" id="iTF-gB-RTm"/>
-                            <constraint firstItem="adD-td-EGA" firstAttribute="top" secondItem="YQ0-1N-lKD" secondAttribute="bottom" constant="20" id="pid-eX-P7i"/>
-                            <constraint firstItem="vHx-xg-AlU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qFp-fp-cl7"/>
-                            <constraint firstItem="BiW-f9-J56" firstAttribute="leading" secondItem="YQ0-1N-lKD" secondAttribute="trailing" id="sGg-HK-CVg"/>
-                            <constraint firstItem="vHx-xg-AlU" firstAttribute="top" secondItem="BiW-f9-J56" secondAttribute="bottom" constant="20" id="vmX-91-GCd"/>
-                            <constraint firstItem="adD-td-EGA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wSR-p1-Wl3"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="lAK-Ny-rg2"/>
-                    <connections>
-                        <outlet property="backPreview" destination="YQ0-1N-lKD" id="5oq-xJ-d9V"/>
-                        <outlet property="frontPreview" destination="adD-td-EGA" id="bI3-3b-ajV"/>
-                        <outlet property="multiBackPreview" destination="BiW-f9-J56" id="hjY-Gj-Kjy"/>
-                        <outlet property="multiFrontPreview" destination="vHx-xg-AlU" id="YG4-ZS-ZgJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1477" y="1112"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="idB-o2-jZW">
             <objects>
@@ -168,35 +93,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Single &amp; Multi" id="PRg-8V-H3F">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SGb-6V-7Er">
-                                        <rect key="frame" x="0.0" y="227.33333587646484" width="414" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SGb-6V-7Er" id="709-EW-4JI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQS-f4-80o">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="MQS-f4-80o" firstAttribute="top" secondItem="709-EW-4JI" secondAttribute="top" id="3Ud-nl-R77"/>
-                                                <constraint firstItem="MQS-f4-80o" firstAttribute="leading" secondItem="709-EW-4JI" secondAttribute="leading" constant="20" id="PBX-06-lux"/>
-                                                <constraint firstAttribute="trailing" secondItem="MQS-f4-80o" secondAttribute="trailing" constant="20" id="ohl-We-l4U"/>
-                                                <constraint firstAttribute="bottom" secondItem="MQS-f4-80o" secondAttribute="bottom" id="zen-hi-qky"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="lgg-eo-ckO"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="YOY-Tk-h42" id="1mO-t1-4xz"/>
@@ -266,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="1478" y="-326"/>
         </scene>
-        <!--Multi Camera View Controller-->
+        <!--Multi Capture View Controller-->
         <scene sceneID="1RO-ya-RHk">
             <objects>
-                <viewController id="fi0-gJ-ybp" customClass="MultiCameraViewController" customModule="AGECameraExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fi0-gJ-ybp" customClass="MultiCaptureViewController" customModule="AGECameraExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DvN-NG-wXU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

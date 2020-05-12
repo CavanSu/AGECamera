@@ -8,6 +8,7 @@
 
 import UIKit
 import AGECamera
+import AVFoundation
 
 class SingleCaptureViewController: UIViewController {
     @IBOutlet weak var preview: AGECameraPreview!
@@ -19,6 +20,7 @@ class SingleCaptureViewController: UIViewController {
 
         do {
             camera = try AGESingleCamera(position: .front)
+            camera?.delegate = self
             camera?.preview = preview
             try camera?.start(work: .capture)
         } catch let error as AGECameraError {
@@ -76,5 +78,18 @@ class SingleCaptureViewController: UIViewController {
         default:
             break
         }
+    }
+}
+
+extension SingleCaptureViewController: AGESingleCameraDelegate {
+    func camera(_ camera: AGESingleCamera, position: AGECameraPosition, didOutput sampleBuffer: CMSampleBuffer) {
+        guard let pixelbuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+            return
+        }
+        
+        let width = CVPixelBufferGetWidth(pixelbuffer)
+        let height = CVPixelBufferGetHeight(pixelbuffer)
+        
+        print("position: \(position.description), resolution: \(width) x \(height)")
     }
 }
