@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A79A7CCB23A261CB00335021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CCA23A261CB00335021 /* AppDelegate.swift */; };
+		A79A7CCD23A261CB00335021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CCC23A261CB00335021 /* SceneDelegate.swift */; };
+		A79A7CCF23A261CB00335021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CCE23A261CB00335021 /* ViewController.swift */; };
+		A79A7CD223A261CB00335021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79A7CD023A261CB00335021 /* Main.storyboard */; };
+		A79A7CD423A261CC00335021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A79A7CD323A261CC00335021 /* Assets.xcassets */; };
+		A79A7CD723A261CC00335021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A79A7CD523A261CC00335021 /* LaunchScreen.storyboard */; };
+		A79A7CE323A2629600335021 /* AGECamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CE223A2629600335021 /* AGECamera.swift */; };
+		A79A7CE523A264F600335021 /* AGECameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7CE423A264F600335021 /* AGECameraError.swift */; };
+		A79A7D5123A774FF00335021 /* AGECameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D5023A774FF00335021 /* AGECameraPreview.swift */; };
+		A79A7D5F23A8AE0100335021 /* AGECameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D5E23A8AE0100335021 /* AGECameraSession.swift */; };
+		A79A7D6123AA2D4500335021 /* AGESingleCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6023AA2D4500335021 /* AGESingleCamera.swift */; };
+		A79A7D6323AB1F4300335021 /* SingleCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6223AB1F4300335021 /* SingleCaptureViewController.swift */; };
+		A79A7D6523AB226800335021 /* AGEMultiCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6423AB226800335021 /* AGEMultiCamera.swift */; };
+		A79A7D6723AB268C00335021 /* MultiCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6623AB268C00335021 /* MultiCameraViewController.swift */; };
+		A79A7D6923AB7C7B00335021 /* AGECameraProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79A7D6823AB7C7B00335021 /* AGECameraProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A79A7CC723A261CB00335021 /* AGECamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGECamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A79A7CCA23A261CB00335021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A79A7CCC23A261CB00335021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A79A7CCE23A261CB00335021 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A79A7CD123A261CB00335021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A79A7CD323A261CC00335021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A79A7CD623A261CC00335021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A79A7CD823A261CC00335021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A79A7CE223A2629600335021 /* AGECamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGECamera.swift; sourceTree = "<group>"; };
+		A79A7CE423A264F600335021 /* AGECameraError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGECameraError.swift; sourceTree = "<group>"; };
+		A79A7D5023A774FF00335021 /* AGECameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGECameraPreview.swift; sourceTree = "<group>"; };
+		A79A7D5E23A8AE0100335021 /* AGECameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGECameraSession.swift; sourceTree = "<group>"; };
+		A79A7D6023AA2D4500335021 /* AGESingleCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGESingleCamera.swift; sourceTree = "<group>"; };
+		A79A7D6223AB1F4300335021 /* SingleCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCaptureViewController.swift; sourceTree = "<group>"; };
+		A79A7D6423AB226800335021 /* AGEMultiCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGEMultiCamera.swift; sourceTree = "<group>"; };
+		A79A7D6623AB268C00335021 /* MultiCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCameraViewController.swift; sourceTree = "<group>"; };
+		A79A7D6823AB7C7B00335021 /* AGECameraProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGECameraProtocol.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A79A7CC423A261CB00335021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A79A7CBE23A261CB00335021 = {
+			isa = PBXGroup;
+			children = (
+				A79A7CC923A261CB00335021 /* AGECamera */,
+				A79A7CC823A261CB00335021 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A79A7CC823A261CB00335021 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A79A7CC723A261CB00335021 /* AGECamera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A79A7CC923A261CB00335021 /* AGECamera */ = {
+			isa = PBXGroup;
+			children = (
+				A79A7D6223AB1F4300335021 /* SingleCaptureViewController.swift */,
+				A79A7D6623AB268C00335021 /* MultiCameraViewController.swift */,
+				A79A7CCE23A261CB00335021 /* ViewController.swift */,
+				A79A7CD023A261CB00335021 /* Main.storyboard */,
+				A79A7CE123A2624D00335021 /* source */,
+				A79A7CE023A2622100335021 /* Supporting Files */,
+			);
+			path = AGECamera;
+			sourceTree = "<group>";
+		};
+		A79A7CE023A2622100335021 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A79A7CCA23A261CB00335021 /* AppDelegate.swift */,
+				A79A7CCC23A261CB00335021 /* SceneDelegate.swift */,
+				A79A7CD323A261CC00335021 /* Assets.xcassets */,
+				A79A7CD523A261CC00335021 /* LaunchScreen.storyboard */,
+				A79A7CD823A261CC00335021 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A79A7CE123A2624D00335021 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				A79A7D6823AB7C7B00335021 /* AGECameraProtocol.swift */,
+				A79A7D6023AA2D4500335021 /* AGESingleCamera.swift */,
+				A79A7D6423AB226800335021 /* AGEMultiCamera.swift */,
+				A79A7CE223A2629600335021 /* AGECamera.swift */,
+				A79A7D5023A774FF00335021 /* AGECameraPreview.swift */,
+				A79A7D5E23A8AE0100335021 /* AGECameraSession.swift */,
+				A79A7CE423A264F600335021 /* AGECameraError.swift */,
+			);
+			name = source;
+			path = ../../source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A79A7CC623A261CB00335021 /* AGECamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A79A7CDB23A261CC00335021 /* Build configuration list for PBXNativeTarget "AGECamera" */;
+			buildPhases = (
+				A79A7CC323A261CB00335021 /* Sources */,
+				A79A7CC423A261CB00335021 /* Frameworks */,
+				A79A7CC523A261CB00335021 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AGECamera;
+			productName = AGECamera;
+			productReference = A79A7CC723A261CB00335021 /* AGECamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A79A7CBF23A261CB00335021 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = CavanSu;
+				TargetAttributes = {
+					A79A7CC623A261CB00335021 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A79A7CC223A261CB00335021 /* Build configuration list for PBXProject "AGECamera" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A79A7CBE23A261CB00335021;
+			productRefGroup = A79A7CC823A261CB00335021 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A79A7CC623A261CB00335021 /* AGECamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A79A7CC523A261CB00335021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79A7CD723A261CC00335021 /* LaunchScreen.storyboard in Resources */,
+				A79A7CD423A261CC00335021 /* Assets.xcassets in Resources */,
+				A79A7CD223A261CB00335021 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A79A7CC323A261CB00335021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A79A7D6123AA2D4500335021 /* AGESingleCamera.swift in Sources */,
+				A79A7D6323AB1F4300335021 /* SingleCaptureViewController.swift in Sources */,
+				A79A7CE323A2629600335021 /* AGECamera.swift in Sources */,
+				A79A7D6723AB268C00335021 /* MultiCameraViewController.swift in Sources */,
+				A79A7CCF23A261CB00335021 /* ViewController.swift in Sources */,
+				A79A7CCB23A261CB00335021 /* AppDelegate.swift in Sources */,
+				A79A7D6923AB7C7B00335021 /* AGECameraProtocol.swift in Sources */,
+				A79A7CE523A264F600335021 /* AGECameraError.swift in Sources */,
+				A79A7D5123A774FF00335021 /* AGECameraPreview.swift in Sources */,
+				A79A7CCD23A261CB00335021 /* SceneDelegate.swift in Sources */,
+				A79A7D6523AB226800335021 /* AGEMultiCamera.swift in Sources */,
+				A79A7D5F23A8AE0100335021 /* AGECameraSession.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A79A7CD023A261CB00335021 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A79A7CD123A261CB00335021 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A79A7CD523A261CC00335021 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A79A7CD623A261CC00335021 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A79A7CD923A261CC00335021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A79A7CDA23A261CC00335021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A79A7CDC23A261CC00335021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = URLGNR2V35;
+				INFOPLIST_FILE = AGECamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CavanSu.AGECamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A79A7CDD23A261CC00335021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = URLGNR2V35;
+				INFOPLIST_FILE = AGECamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CavanSu.AGECamera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A79A7CC223A261CB00335021 /* Build configuration list for PBXProject "AGECamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A79A7CD923A261CC00335021 /* Debug */,
+				A79A7CDA23A261CC00335021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A79A7CDB23A261CC00335021 /* Build configuration list for PBXNativeTarget "AGECamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A79A7CDC23A261CC00335021 /* Debug */,
+				A79A7CDD23A261CC00335021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A79A7CBF23A261CB00335021 /* Project object */;
+}
