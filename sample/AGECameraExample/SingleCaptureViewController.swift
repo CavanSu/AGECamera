@@ -22,7 +22,7 @@ class SingleCaptureViewController: UIViewController {
             camera = try AGESingleCamera(position: .front)
             camera?.delegate = self
             camera?.preview = preview
-            try camera?.start(work: .capture)
+            try camera?.start(work: .capture(isMirror: true))
         } catch let error as AGECameraError {
             print("Error: \(error.localizedDescription)")
         } catch {
@@ -82,7 +82,7 @@ class SingleCaptureViewController: UIViewController {
 }
 
 extension SingleCaptureViewController: AGESingleCameraDelegate {
-    func camera(_ camera: AGESingleCamera, position: AGECameraPosition, didOutput sampleBuffer: CMSampleBuffer) {
+    func camera(_ camera: AGESingleCamera, position: Position, didOutput sampleBuffer: CMSampleBuffer) {
         guard let pixelbuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }

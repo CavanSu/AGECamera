@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 public protocol AGEMultiCameraDelegate: NSObjectProtocol {
-    func multiCamera(_ camera: AGEMultiCamera, position: AGECameraPosition, didOutput sampleBuffer: CMSampleBuffer)
+    func multiCamera(_ camera: AGEMultiCamera, position: Position, didOutput sampleBuffer: CMSampleBuffer)
 }
 
 public class AGEMultiCamera: NSObject, AGEMultiCameraProtocol {
@@ -106,7 +106,7 @@ private extension AGEMultiCamera {
         try sessionConfiguration(position: .back, preview: backPreview, olds: backOlds)
     }
     
-    func sessionConfiguration(position: AGECameraPosition, preview: AGECameraPreview?, olds: OldItems) throws {
+    func sessionConfiguration(position: Position, preview: AGECameraPreview?, olds: OldItems) throws {
         guard #available(iOS 13.0, *) else {
             throw AGECameraError(type: .fail("unsupport this position: \(position.rawValue)"))
         }
@@ -209,7 +209,7 @@ private extension AGEMultiCamera {
 
 extension AGEMultiCamera: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        var position: AGECameraPosition
+        var position: Position
         
         if connection == workingSession.backVideoDataConnection {
             position = .back

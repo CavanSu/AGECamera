@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 public protocol AGESingleCameraDelegate: NSObjectProtocol {
-    func camera(_ camera: AGESingleCamera, position: AGECameraPosition, didOutput sampleBuffer: CMSampleBuffer)
+    func camera(_ camera: AGESingleCamera, position: Position, didOutput sampleBuffer: CMSampleBuffer)
 }
 
 open class AGESingleCamera: NSObject, AGECameraProtocol {
@@ -22,16 +22,26 @@ open class AGESingleCamera: NSObject, AGECameraProtocol {
     }
     
     public enum WorkMode {
-        case capture
+        case capture(isMirror: Bool)
         
         fileprivate var isWorking: Bool {
             switch self {
             case .capture: return true
             }
         }
+        
+        fileprivate var rawValue: Int {
+            switch self {
+            case .capture: return 1
+            }
+        }
+        
+        static func==(left: WorkMode, right: WorkMode) -> Bool {
+            return left.rawValue == right.rawValue
+        }
     }
     
-    private(set) var position: AGECameraPosition
+    public private(set) var position: Position
     
     private lazy var workingSession = AGECameraCaptureSingleSession()
     
@@ -43,7 +53,7 @@ open class AGESingleCamera: NSObject, AGECameraProtocol {
     
     public var preview: AGECameraPreview?
     
-    public init?(position: AGECameraPosition) throws {
+    public init?(position: Position) throws {
         self.position = position
         super.init()
         try checkIsSimulator()
@@ -72,9 +82,7 @@ public extension AGESingleCamera {
         workingSession.clean()
     }
     
-    func switchPosition(_ position: AGECameraPosition) throws {
-        
-        
+    func switchPosition(_ position: Position) throws {
         let oldPosition = self.position
         guard oldPosition != position else {
             return
@@ -101,8 +109,6 @@ public extension AGESingleCamera {
 // MARK: - Video Data Capture
 extension AGESingleCamera {
     func startVideoCapture() throws {
-        print("switchPosition===>")
-        
         try checkCameraPermision { [weak self] in
             guard let strongSelf = self else {
                 return
@@ -116,7 +122,7 @@ extension AGESingleCamera {
 }
 
 private extension AGESingleCamera {
-    func prepareSessionConfigurateion(position: AGECameraPosition) throws {
+    func prepareSessionConfigurateion(position: Position) throws {
         let oldDeviceInput = (position == .back ? workingSession.frontCameraInput : workingSession.backCameraInput)
         let oldVideoDataOutput = (position == .back ? workingSession.frontVideoDataOutput : workingSession.backVideoDataOutput)
         let oldVideoConnection = (position == .back ? workingSession.frontVideoDataConnection : workingSession.backVideoDataConnection)
@@ -130,7 +136,7 @@ private extension AGESingleCamera {
         try sessionConfiguration(position: position, preview: preview, olds: olds)       
     }
     
-    func sessionConfiguration(position: AGECameraPosition, preview: AGECameraPreview?, olds: OldItems) throws {
+    func sessionConfiguration(position: Position, preview: AGECameraPreview?, olds: OldItems) throws {
         let session = workingSession
         
         var camera: AVCaptureDevice
@@ -158,10 +164,6 @@ private extension AGESingleCamera {
             }
             
             camera = temp
-            
-            guard let camera = AVCaptureDevice.default(for: .video) else {
-                throw AGECameraError(type: .fail("no \(position.description) camera"))
-            }
         }
         
         try camera.lockForConfiguration()
@@ -200,8 +202,6 @@ private extension AGESingleCamera {
         newVideoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
         newVideoDataOutput.setSampleBufferDelegate(self, queue: .main)
         
-        print("test===>1")
-        
         // AVCaptureInput.Port
         var videoPort: AVCaptureInput.Port
         if #available(iOS 13.0, *) {
@@ -223,6 +223,19 @@ private extension AGESingleCamera {
             throw AGECameraError(type: .fail("no connection to the \(position.description) camera video data output"))
         }
         session.noumenon.add(newDataConnection)
+        
+        if newDataConnection.isVideoMirroringSupported {
+            guard let workMode = self.workingMode else {
+                assert(false)
+                return
+            }
+            
+            switch workMode {
+            case .capture(isMirror: let isMirror):
+                newDataConnection.isVideoMirrored = isMirror
+            }
+        }
+        
         newDataConnection.videoOrientation = .portrait
         
         // connect input to layer

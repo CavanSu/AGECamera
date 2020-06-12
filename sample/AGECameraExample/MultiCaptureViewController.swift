@@ -39,7 +39,7 @@ class MultiCaptureViewController: UIViewController {
 }
 
 extension MultiCaptureViewController: AGEMultiCameraDelegate {
-    func multiCamera(_ camera: AGEMultiCamera, position: AGECameraPosition, didOutput sampleBuffer: CMSampleBuffer) {
+    func multiCamera(_ camera: AGEMultiCamera, position: Position, didOutput sampleBuffer: CMSampleBuffer) {
         guard let pixelbuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }

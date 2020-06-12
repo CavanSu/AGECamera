@@ -11,9 +11,9 @@ import AVFoundation
 
 public typealias AGECameraEXCompletion = (() throws -> Void)?
 
-public typealias AGECameraPosition = AVCaptureDevice.Position
+public typealias Position = AVCaptureDevice.Position
 
-public extension AGECameraPosition {
+public extension Position {
     var description: String {
         switch self {
         case .front:        return "front"
@@ -23,7 +23,7 @@ public extension AGECameraPosition {
         }
     }
     
-    var toggle: AGECameraPosition {
+    var toggle: Position {
         switch self {
         case .front: return .back
         case .back:  return .front
