@@ -22,7 +22,7 @@ class SingleCaptureViewController: UIViewController {
             camera = try AGESingleCamera(position: .front)
             camera?.delegate = self
             camera?.preview = preview
-            try camera?.start(work: .capture(isMirror: true))
+            try camera?.start(work: .capture(configuration: AGESingleCamera.CaptureConfiguration()))
         } catch let error as AGECameraError {
             print("Error: \(error.localizedDescription)")
         } catch {

@@ -14,15 +14,15 @@ public protocol AGESingleCameraDelegate: NSObjectProtocol {
 }
 
 open class AGESingleCamera: NSObject, AGECameraProtocol {
-    fileprivate struct OldItems {
-        var deviceInput: AVCaptureDeviceInput?
-        var videoDataOutput: AVCaptureVideoDataOutput?
-        var videoDataConnection: AVCaptureConnection?
-        var previewConnnection: AVCaptureConnection?
+    public class CaptureConfiguration: NSObject {
+        var resolution: AVCaptureSession.Preset = .high
+        var frameRate: UInt = 15
+        var isMirror: Bool = true
+        var position: Position = .front
     }
     
     public enum WorkMode {
-        case capture(isMirror: Bool)
+        case capture(configuration: CaptureConfiguration)
         
         fileprivate var isWorking: Bool {
             switch self {
@@ -41,21 +41,32 @@ open class AGESingleCamera: NSObject, AGECameraProtocol {
         }
     }
     
-    public private(set) var position: Position
-    
-    private lazy var workingSession = AGECameraCaptureSingleSession()
-    
-    private let mediaOutputQueue = DispatchQueue(label: "AGESingleCameraMediaDataOutputQueue")
-    
-    private var workingMode: WorkMode?
+    public var position: Position {
+        return captureConfiguration.position
+    }
     
     public weak var delegate: AGESingleCameraDelegate?
     
     public var preview: AGECameraPreview?
     
+    fileprivate struct OldItems {
+        var deviceInput: AVCaptureDeviceInput?
+        var videoDataOutput: AVCaptureVideoDataOutput?
+        var videoDataConnection: AVCaptureConnection?
+        var previewConnnection: AVCaptureConnection?
+    }
+    
+    private lazy var workingSession = AGECameraCaptureSingleSession()
+    
+    private let mediaOutputQueue = DispatchQueue(label: "AGESingleCameraMediaDataOutputQueue")
+    
+    private var captureConfiguration = CaptureConfiguration()
+    
+    private var workingMode: WorkMode?
+    
     public init?(position: Position) throws {
-        self.position = position
         super.init()
+        self.captureConfiguration.position = position
         try checkIsSimulator()
     }
 }
@@ -69,7 +80,9 @@ public extension AGESingleCamera {
         workingMode = work
         
         switch work {
-        case .capture: try startVideoCapture()
+        case .capture(let configuration):
+            self.captureConfiguration = configuration
+            try startVideoCapture(configuration: configuration)
         }
     }
     
@@ -88,33 +101,35 @@ public extension AGESingleCamera {
             return
         }
         
-        self.position = position
-        
+        self.captureConfiguration.position = position
+       
         guard let mode = workingMode else {
             return
         }
         
         switch mode {
-        case .capture: try prepareSessionConfigurateion(position: position)
+        case .capture: try prepareSession(configuration: captureConfiguration)
         }
     }
     
     func set(resolution: AVCaptureSession.Preset) {
         if workingSession.noumenon.canSetSessionPreset(resolution) {
             workingSession.noumenon.sessionPreset = resolution
+        } else {
+            self.captureConfiguration.resolution = workingSession.noumenon.sessionPreset
         }
     }
 }
 
 // MARK: - Video Data Capture
 extension AGESingleCamera {
-    func startVideoCapture() throws {
+    func startVideoCapture(configuration: CaptureConfiguration) throws {
         try checkCameraPermision { [weak self] in
             guard let strongSelf = self else {
                 return
             }
             
-            try strongSelf.prepareSessionConfigurateion(position: strongSelf.position)
+            try strongSelf.prepareSession(configuration: configuration)
             
             strongSelf.workingSession.noumenon.startRunning()
         }
@@ -122,7 +137,7 @@ extension AGESingleCamera {
 }
 
 private extension AGESingleCamera {
-    func prepareSessionConfigurateion(position: Position) throws {
+    func prepareSession(configuration: CaptureConfiguration) throws {
         let oldDeviceInput = (position == .back ? workingSession.frontCameraInput : workingSession.backCameraInput)
         let oldVideoDataOutput = (position == .back ? workingSession.frontVideoDataOutput : workingSession.backVideoDataOutput)
         let oldVideoConnection = (position == .back ? workingSession.frontVideoDataConnection : workingSession.backVideoDataConnection)
@@ -133,10 +148,10 @@ private extension AGESingleCamera {
                             videoDataConnection: oldVideoConnection,
                             previewConnnection: oldPreviewConnection)
         
-        try sessionConfiguration(position: position, preview: preview, olds: olds)       
+        try session(configuration: configuration, preview: preview, olds: olds)
     }
     
-    func sessionConfiguration(position: Position, preview: AGECameraPreview?, olds: OldItems) throws {
+    func session(configuration: CaptureConfiguration, preview: AGECameraPreview?, olds: OldItems) throws {
         let session = workingSession
         
         var camera: AVCaptureDevice
@@ -224,17 +239,14 @@ private extension AGESingleCamera {
         }
         session.noumenon.add(newDataConnection)
         
+        // Video Mirrored
         if newDataConnection.isVideoMirroringSupported {
-            guard let workMode = self.workingMode else {
-                assert(false)
-                return
-            }
-            
-            switch workMode {
-            case .capture(isMirror: let isMirror):
-                newDataConnection.isVideoMirrored = isMirror
-            }
+            newDataConnection.isVideoMirrored = configuration.isMirror
         }
+        
+        // Frame Rate
+        camera.activeVideoMinFrameDuration = CMTime(value: 1, timescale: 15)
+        camera.activeVideoMaxFrameDuration = CMTime(value: 1, timescale: 15)
         
         newDataConnection.videoOrientation = .portrait
         
