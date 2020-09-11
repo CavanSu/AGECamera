@@ -15,10 +15,10 @@ public protocol AGESingleCameraDelegate: NSObjectProtocol {
 
 open class AGESingleCamera: NSObject, AGECameraProtocol {
     public class CaptureConfiguration: NSObject {
-        var resolution: AVCaptureSession.Preset = .high
-        var frameRate: UInt = 15
-        var isMirror: Bool = true
-        var position: Position = .front
+        public var resolution: AVCaptureSession.Preset = .high
+        public var frameRate: UInt = 15
+        public var isMirror: Bool = true
+        public var position: Position = .front
     }
     
     public enum WorkMode {
@@ -39,6 +39,10 @@ open class AGESingleCamera: NSObject, AGECameraProtocol {
         static func==(left: WorkMode, right: WorkMode) -> Bool {
             return left.rawValue == right.rawValue
         }
+    }
+    
+    public var resolution: AVCaptureSession.Preset {
+        return workingSession.noumenon.sessionPreset
     }
     
     public var position: Position {
@@ -241,7 +245,11 @@ private extension AGESingleCamera {
         
         // Video Mirrored
         if newDataConnection.isVideoMirroringSupported {
-            newDataConnection.isVideoMirrored = configuration.isMirror
+            if configuration.position == .front {
+                newDataConnection.isVideoMirrored = configuration.isMirror
+            } else {
+                newDataConnection.isVideoMirrored = false
+            }
         }
         
         // Frame Rate
